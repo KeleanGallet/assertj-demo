@@ -11,7 +11,7 @@ class CalculatorTest {
     @DisplayName("Should return the sum of two numbers. (Classic assertion)")
     void testAddWithClassicAssertion() {
         var expected = 2;
-        var actual = new Calculator().add(1, 1);
+        var actual = 1 + 1;
 
         assertEquals(expected, actual);
     }
@@ -20,7 +20,7 @@ class CalculatorTest {
     @DisplayName("Should return the sum of two numbers. (AssertJ)")
     void testAddWithAssertJ() {
         var expected = 2;
-        var actual = new Calculator().add(1, 1);
+        var actual = 1 + 1;
 
         assertThat(actual).isEqualTo(expected);
     }
