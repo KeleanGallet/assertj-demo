@@ -74,7 +74,7 @@ class DatabaseItemTest {
     @Test
     @DisplayName("Should verify all fields are not null. (AssertJ)")
     void testVerifyAllFieldsNotNullAssertJ() {
-        var item = new DatabaseItem(UUID.randomUUID(), null);
+        var item = new DatabaseItem(UUID.randomUUID(), "Test");
 
         assertThat(item).isNotNull()
                 .usingRecursiveAssertion()
