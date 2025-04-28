@@ -9,6 +9,7 @@ import java.time.Month;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class DateTest {
     @Test
@@ -35,5 +36,25 @@ class DateTest {
                 .hasHour(14)
                 .hasMinute(30)
                 .hasSecond(25);
+    }
+
+    @Test
+    @DisplayName("Should compare two dates. (Classic assertion)")
+    void shouldCompareLocalDateTimeClassicAssertion() {
+        var date = LocalDateTime.of(2025, 3, 28, 14, 30, 25);
+        var greaterDate = date.plusYears(1);
+
+        assertTrue(date.isBefore(greaterDate));
+        assertTrue(greaterDate.isAfter(date));
+    }
+
+    @Test
+    @DisplayName("Should compare two dates. (AssertJ)")
+    void shouldCompareLocalDateTimeAssertJ() {
+        var date = LocalDateTime.of(2025, 3, 28, 14, 30, 25);
+        var greaterDate = date.plusYears(1);
+
+        assertThat(date).isBefore(greaterDate);
+        assertThat(greaterDate).isAfter(date);
     }
 }
