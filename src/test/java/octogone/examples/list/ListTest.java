@@ -56,8 +56,8 @@ class ListTest {
     @Test
     @DisplayName("Should compare two lists with any order. (AssertJ)")
     void testCompareListWithAnyOrderAssertJ() {
-        var list1 = java.util.List.of(1, 2, 3);
-        var list2 = java.util.List.of(3, 2, 1);
+        var list1 = java.util.List.of("World", "Hello", "Test");
+        var list2 = java.util.List.of("Test", "Hello", "World");
 
         assertThat(list1).containsExactlyInAnyOrderElementsOf(list2);
     }
