@@ -42,13 +42,13 @@ class ListTest {
     @Test
     @DisplayName("Should compare two lists with any order. (Classic assertion)")
     void testCompareListWithAnyOrderNotIntClassicAssertion() {
-        var list1 = java.util.List.of("World", "Hello", "Test");
-        var list2 = java.util.List.of("Test", "Hello", "World");
+        var expected = List.of("World", "Hello", "Test");
 
-        assertEquals(list1.size(), list2.size());
-        var copy = new ArrayList<>(List.copyOf(list2));
-        for (var value : list1) {
-            assertTrue(copy.contains(value));
+        var actual = List.of("Test", "Hello", "World"); // Could be a method call to test our implementation
+
+        assertEquals(expected.size(), actual.size());
+        var copy = new ArrayList<>(List.copyOf(actual));
+        for (var value : expected) {
             assertTrue(copy.remove(value));
         }
     }
