@@ -1,14 +1,12 @@
 package octogone.examples.soft;
 
 import org.assertj.core.api.SoftAssertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class SoftAssertionTest {
     @Test
     @DisplayName("Should softly assert values.")
-    @Disabled // To remove before screenshot
     void testSoftAssertionClassicAssertion() {
         var softAssertions = new SoftAssertions();
 
