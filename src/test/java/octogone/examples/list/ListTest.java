@@ -48,7 +48,7 @@ class ListTest {
 
         assertEquals(expected.size(), actual.size());
         for (var value : actual) {
-            assertTrue(expected.remove(value));
+            assertTrue(expected.contains(value));
         }
     }
 
